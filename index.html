@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="ShowpadDemo">
+    <head>
+        <title>Showpad 3D Web Application Example</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name = "viewport" content="initial-scale = 1, user-scalable=no">
+    </head>
+    <body ng-controller="DemoController">
+        <!--
+            Simple 3D example using Three.js (canvas rendering) to demonstrate 3d capabilities of Showpad web apps
+        -->
+        <div class="canvas-wrapper" id="canvas-wrapper"></div>
+
+        <div class="sidebar options" id="options">
+            <h2>Options</h2>
+            <div class="options-wrapper">
+                <h3>Cupboard</h3>
+
+                <div class="control-group">
+                    <label>Square sizes (cm)</label>
+                    <input type="number" ng-model="squareSize" />
+                </div>
+
+                <div class="control-group">
+                    <label>Horizontal rows</label>
+                    <input type="number" ng-model="horizontalRows" />
+                </div>
+
+                <div class="control-group">
+                    <label>Vertical rows</label>
+                    <input type="number" ng-model="verticalRows" :>
+                </div>
+
+                <div class="control-group">
+                    <label>Color</label>
+
+                    <ul class="color-list cupboard">
+                        <li ng-repeat="color in cupboardColors" ng-class="{ 'active': cupboardColor == color }" ng-style="{ backgroundColor: color }" ng-click="setCupboardColor(color)">
+                        </li>
+                    </ul>
+                </div>
+
+
+                <hr />
+
+                <h3>Background</h3>
+
+                <div class="control-group">
+                    <ul class="color-list background">
+                        <li ng-repeat="color in backgroundColors" ng-class="{ 'active': backgroundColor == color }" ng-style="{ backgroundColor: color }" ng-click="setBackgroundColor(color)">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="js/vendor/angular.min.js"></script>
+        <script src="js/vendor/three.min.js"></script>
+        <script src="js/vendor/orbitcontrols.js"></script>
+
+
+        <script src="js/app.js"></script>
+        <script src="js/services/three.service.js"></script>
+        <script src="js/controllers/demo.controller.js"></script>
+    </body>
+</html>
