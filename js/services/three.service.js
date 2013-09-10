@@ -26,6 +26,12 @@ angular
 
                 // add controls but disable them
                 controls = new THREE.OrbitControls(camera, wrapper);
+
+                controls.zoomSpeed = 0.75;
+                controls.rotateSpeed = 0.75;
+                controls.noPan = true;
+                controls.autoRotate = true;
+
                 controls.addEventListener('change', function() {
                     render();
                 });
