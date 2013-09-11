@@ -39,10 +39,15 @@ angular
 
             // watch for changes in configuration, render $three if needed
             $scope.$watch('[cupboardColor, verticalRows, horizontalRows, squareSize]', function() {
+                // sanitize
+                $scope.squareSize = Math.min(Math.max(10, parseInt($scope.squareSize, 10)), 100);
+                $scope.verticalRows = Math.min(Math.max(1, parseInt($scope.verticalRows, 10)), 50);
+                $scope.horizontalRows = Math.min(Math.max(1, parseInt($scope.horizontalRows, 10)), 50);
+
                 $three.generate(
-                    parseInt($scope.horizontalRows, 10),
-                    parseInt($scope.verticalRows, 10),
-                    parseInt($scope.squareSize, 10),
+                    $scope.horizontalRows,
+                    $scope.verticalRows,
+                    $scope.squareSize,
                     $scope.cupboardColor, 10
                 );
                 $three.render();
