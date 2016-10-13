@@ -10,7 +10,7 @@ This Example
 This example takes some parameters to generate a cupboard.
 You can changes the number of rows horizontally and vertically, and change the size of the boxes and the color of the cupboard.
 
-The demo is available [on my personal website](http://klaascuvelier.be/demo/ShowpadExample3DWebApp/), you can get a "Showpad-ready" web app by [downloading this repository as zip](https://github.com/klaascuvelier/ShowpadExample3DWebApp/archive/master.zip)
+You can get a "Showpad ready" web app by [downloading this repository as zip](https://github.com/klaascuvelier/ShowpadExample3DWebApp/archive/master.zip)
 
 Screenshot
 ----------
